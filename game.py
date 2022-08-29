@@ -1,6 +1,7 @@
 #handling user inputs and printing and inteface part of the game
 # creating board
-from tic_tac_toe_game import RandomComputerPlayer, UserPlayer
+from tic_tac_toe_game import RandomComputerPlayer, UserPlayer, UnbeatableComputerPlayer
+from time import sleep
 
 class TicTacToe:
     def __init__(self) -> None:
@@ -99,12 +100,14 @@ def play(this_game, x_player, o_player, print_game = True):
 
             #changing the turns
             letter = "O" if letter == "X" else "X"
+        
+        sleep(0.8)
 
     if print_game:
         print("It's a tie!")
 
 if __name__ == "__main__":
     x_player = UserPlayer('X')
-    o_player = RandomComputerPlayer('O')
+    o_player = UnbeatableComputerPlayer('O')
     this_game = TicTacToe()
     play(this_game, x_player, o_player, print_game = True )
