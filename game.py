@@ -23,6 +23,9 @@ class TicTacToe:
 
     def empty_spots(self):
         return " " in self.board #conditional statement(will return True or False)
+    
+    def num_empty_spots(self):
+        return self.board.count(' ')
 
     def make_move(self, move, letter):
         move = int(move)
