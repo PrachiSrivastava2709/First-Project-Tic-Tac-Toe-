@@ -30,13 +30,9 @@ class TicTacToe:
 
     def make_move(self, move, letter):
         move = int(move)
-        if self.board[move] == " ":
-            self.board[move] = letter
-            if self.winner(move, letter):
-                self.current_winner = letter
-            return True
-        print("This got executed")
-        return False
+        if self.winner(move, letter):
+            self.current_winner = letter
+        return True
 
     def winner(self, move, letter):
         # winner is when same letter in
